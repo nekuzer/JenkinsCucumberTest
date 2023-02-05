@@ -7,6 +7,6 @@ public class TestStep {
 
     @When("Test")
     public void test() {
-        open("https://www.google.com/?client=safari");
+        open("https://www.googlehkjhhkjhk.com/?client=safari");
     }
 }
