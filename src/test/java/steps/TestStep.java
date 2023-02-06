@@ -1,10 +1,9 @@
 package steps;
 
+import com.codeborne.selenide.Browser;
 import com.codeborne.selenide.Condition;
-import io.cucumber.java.After;
-import io.cucumber.java.AfterStep;
-import io.cucumber.java.BeforeStep;
-import io.cucumber.java.Scenario;
+import com.codeborne.selenide.Configuration;
+import io.cucumber.java.*;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
@@ -12,16 +11,20 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.*;
 
 public class TestStep {
 
     public static WebDriver driver = new ChromeDriver();
 
+    @Before
+    public void before() {
+    }
+
     @After
     public void after(Scenario scenario) {
         if (scenario.isFailed()) {
+            System.out.println("---------------- ok ----------------");
             TakesScreenshot ts = (TakesScreenshot) driver;
             byte[] screenshot = ts.getScreenshotAs(OutputType.BYTES);
 
@@ -37,7 +40,8 @@ public class TestStep {
 
     @When("Test")
     public void test() {
-        open("https://www.google.com/?client=safari");
-        $(By.xpath("//div[contains(text(), 'fsefsefsfe')]")).shouldBe(Condition.visible.because("Его нет"));
+        driver.get("https://www.google.com/?client=safari");
+        $(By.xpath("//div[contains(text(), 'gdgdgdrg')]")).shouldBe(Condition.visible.because("Его нет"));
+        driver.close();
     }
 }
