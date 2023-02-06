@@ -27,6 +27,10 @@ public class TestStep {
             System.out.println("---------------- ok ----------------");
             byte[] decoded = Selenide.screenshot(OutputType.BYTES);
             scenario.attach(decoded, "image/png", "ok");
+        } else  {
+            System.out.println("---------------- error ----------------");
+            byte[] decoded = Selenide.screenshot(OutputType.BYTES);
+            scenario.attach(decoded, "image/png", "ok");
         }
 
     }
