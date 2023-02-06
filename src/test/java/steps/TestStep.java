@@ -41,7 +41,7 @@ public class TestStep {
     @When("Test")
     public void test() {
         driver.get("https://www.google.com/?client=safari");
-        $(By.xpath("//div[contains(text(), 'gdgdgdrg')]")).shouldBe(Condition.visible.because("Его нет"));
+        $(By.xpath("//div[contains(text(), '')]")).shouldBe(Condition.visible.because("Его нет"));
         driver.close();
     }
 }
