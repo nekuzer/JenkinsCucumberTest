@@ -1,3 +1,3 @@
 Feature: Test
-  Scenario: Test
+  Scenario: Test1
     When Test
