@@ -25,11 +25,7 @@ public class TestStep {
     public void after(Scenario scenario) {
         if (scenario.isFailed()) {
             System.out.println("---------------- ok ----------------");
-//            TakesScreenshot ts = (TakesScreenshot) driver;
-//            byte[] screenshot = ts.getScreenshotAs(OutputType.BYTES);
-//
-//            scenario.attach(screenshot, "image/png", "ok");
-            byte[] decoded = Base64.getDecoder().decode(Selenide.screenshot(OutputType.BASE64));
+            byte[] decoded = Selenide.screenshot(OutputType.BYTES);
             scenario.attach(decoded, "image/png", "ok");
         }
 
@@ -39,5 +35,11 @@ public class TestStep {
     public void test() {
         open("https://www.google.com/?client=safari");
         $(By.xpath("//div[contains(text(), 'ddaawd')]")).shouldBe(Condition.visible.because("Его нет"));
+    }
+
+    @When("Test2")
+    public void test2() {
+        open("https://www.google.com/?client=safari");
+        $(By.xpath("//div[contains(text(), '')]")).shouldBe(Condition.visible.because("Его нет"));
     }
 }

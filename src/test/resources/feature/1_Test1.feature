@@ -3,4 +3,4 @@ Feature: Test
     When Test
 
   Scenario: Test2
-    When Test
+    When Test2
