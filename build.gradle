@@ -14,7 +14,7 @@ dependencies {
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
     testImplementation 'io.cucumber:cucumber-java:7.11.1'
     testImplementation 'io.cucumber:cucumber-junit:7.11.1'
-    implementation group: 'com.codeborne', name: 'selenide', version: '6.10.1'
+    implementation group: 'com.codeborne', name: 'selenide', version: '6.11.2'
 
 
 }
