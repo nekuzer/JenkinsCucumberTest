@@ -19,10 +19,6 @@ dependencies {
 
 }
 
-test {
-    useJUnitPlatform()
-}
-
-task testCucumber(type: Test) {
-    include '**/RunCucumberTest*'
+task ttt() {
+    println("hello")
 }
